@@ -111,3 +111,35 @@ This is a course project (SLS318). Please follow the established coding standard
 ## License
 
 ISC License - See package.json for details
+
+## Image/Asset Organization
+
+Each scene's assets should be co-located with the scene file for better maintainability.
+
+### Directory Structure:
+```
+app/
+├── room/
+│   ├── a-1/
+│   │   ├── page.tsx
+│   │   └── assets/          # Room-specific assets (scene images, sounds, etc.)
+│   ├── a-2/
+│   │   ├── page.tsx
+│   │   └── assets/
+│   └── a-3/
+│       ├── page.tsx
+│       └── assets/
+├── page.tsx                 # Main entrance
+└── assets/                  # Entrance-specific assets
+
+public/
+└── assets/                  # Shared/global assets (UI elements, common sounds, etc.)
+```
+
+### Asset Naming Convention:
+- Room scene images: `app/room/[room-id]/assets/scene.jpg`
+- Room-specific assets: `app/room/[room-id]/assets/[asset-name]`
+- Shared assets: `public/assets/[category]/[asset-name]`
+- Reference paths:
+  - Room assets: `./assets/scene.jpg`
+  - Shared assets: `/assets/[category]/[asset-name]`

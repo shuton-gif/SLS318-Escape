@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <Scene
       currentScene="entrance"
-      imageUrl="/images/entrance-room.jpg"
+      imageUrl="./assets/entrance.jpg"
       dialog="Welcome to the escape room. You see three possible paths ahead. Each door leads to a different challenge. Choose wisely..."
       nextRoutes={branchingRoutes}
     />

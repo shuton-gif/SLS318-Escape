@@ -10,7 +10,7 @@ export default function RoomA2() {
   return (
     <Scene
       currentScene="a-2"
-      imageUrl="/images/room-a2.jpg"
+      imageUrl="./assets/scene.jpg"
       dialog="You chose the right door. This room contains strange mechanical devices and gears. You need to figure out the correct sequence to activate them."
       nextRoutes={nextRoutes}
       prevRoute="/"

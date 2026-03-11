@@ -1,0 +1,43 @@
+{
+  "rooms": [
+    {
+      "id": "b-1",
+      "dialog": "You've entered the ancient archive. Dusty scrolls line the walls, and there's a mysterious pedestal in the center with glowing runes.",
+      "prevRoute": "/room/a-1",
+      "nextRoutes": {
+        "Examine the Pedestal": "/room/c-1",
+        "Search the Scrolls": "/room/c-2",
+        "Return to Library": "/room/a-1"
+      }
+    },
+    {
+      "id": "b-2", 
+      "dialog": "The machinery hums with power. Gears turn in complex patterns, and steam hisses from copper pipes. A control panel awaits your input.",
+      "prevRoute": "/room/a-2",
+      "nextRoutes": {
+        "Activate Main Engine": "/room/c-3",
+        "Adjust the Gears": "/room/c-4",
+        "Emergency Shutdown": "/room/a-2"
+      }
+    },
+    {
+      "id": "b-3",
+      "dialog": "The crystal chamber resonates with mystical energy. Each crystal pulses with a different color, creating a mesmerizing light show. Ancient symbols glow on the floor.",
+      "prevRoute": "/room/a-3", 
+      "nextRoutes": {
+        "Touch the Blue Crystal": "/room/c-5",
+        "Study the Floor Symbols": "/room/c-6",
+        "Return to Secret Passage": "/room/a-3"
+      }
+    },
+    {
+      "id": "c-1",
+      "dialog": "The pedestal's runes react to your presence. A holographic map appears, showing the layout of the entire escape room complex.",
+      "prevRoute": "/room/b-1",
+      "nextRoutes": {
+        "Follow Map to Exit": "/victory",
+        "Explore Hidden Path": "/room/secret-1"
+      }
+    }
+  ]
+}

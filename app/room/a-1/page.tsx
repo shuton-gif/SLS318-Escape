@@ -9,7 +9,7 @@ export default function RoomA1() {
   return (
     <Scene
       currentScene="a-1"
-      imageUrl="/images/room-a1.jpg"
+      imageUrl="./assets/scene.jpg"
       dialog="You chose the left door. You're in a library filled with ancient books. There's a riddle written on the wall that needs solving."
       nextRoutes={nextRoutes}
       prevRoute="/"
