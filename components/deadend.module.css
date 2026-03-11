@@ -1,0 +1,90 @@
+.deadEndWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2c1810, #1a0f0a);
+    color: white;
+    padding: 2rem;
+}
+
+.deadEndContainer {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #8B0000;
+    border-radius: 15px;
+    padding: 3rem;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(139, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: 3rem;
+    margin: 0;
+    color: #FF6B6B;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    font-weight: bold;
+}
+
+.message {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #E0E0E0;
+    line-height: 1.6;
+}
+
+.routeInfo {
+    font-size: 1rem;
+    margin: 0;
+    color: #FFCC02;
+}
+
+.routeInfo code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #FFE066;
+}
+
+.hint {
+    font-size: 1.1rem;
+    margin: 0;
+    color: #B0B0B0;
+    font-style: italic;
+    line-height: 1.5;
+    border-left: 3px solid #8B0000;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+.backButton {
+    background: linear-gradient(135deg, #8B0000, #DC143C);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
+}
+
+.backButton:hover {
+    background: linear-gradient(135deg, #DC143C, #FF6B6B);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+}
+
+.backButton:active {
+    transform: translateY(0);
+}

@@ -143,3 +143,76 @@ public/
 - Reference paths:
   - Room assets: `./assets/scene.jpg`
   - Shared assets: `/assets/[category]/[asset-name]`
+
+## Room Generation Scripts
+
+Two scripts are available to automatically generate room directories and page.tsx files:
+
+### 1. JSON-based Generator (Recommended)
+
+**Usage:**
+```bash
+./generate-rooms.sh [rooms.json]
+```
+
+**Example:**
+```bash
+./generate-rooms.sh          # Uses rooms.json by default
+./generate-rooms.sh my-rooms.json    # Uses custom JSON file
+```
+
+**JSON Format (`rooms.json`):**
+```json
+{
+  "rooms": [
+    {
+      "id": "b-1",
+      "dialog": "You've entered the ancient archive. Dusty scrolls line the walls...",
+      "prevRoute": "/room/a-1",
+      "nextRoutes": {
+        "Examine the Pedestal": "/room/c-1",
+        "Search the Scrolls": "/room/c-2",
+        "Return to Library": "/room/a-1"
+      }
+    },
+    {
+      "id": "secret-room",
+      "dialog": "A hidden chamber filled with treasure...",
+      "nextRoutes": {
+        "Take the Gold": "/victory",
+        "Leave Quietly": "/room/a-1"
+      }
+    }
+  ]
+}
+```
+
+### 2. Simple Command-line Generator
+
+**Usage:**
+```bash
+./generate-simple.sh "room-id" "dialog text" "prev-route" "Route1:/path1,Route2:/path2"
+```
+
+**Example:**
+```bash
+./generate-simple.sh "d-1" "Dark dungeon with chains" "/room/c-1" "Exit:/victory,Back:/room/c-1"
+```
+
+### What Gets Generated
+
+Both scripts create:
+- `app/room/[room-id]/page.tsx` - Complete Scene component with proper naming
+- `app/room/[room-id]/assets/` - Empty directory for scene.jpg and other assets
+- Component names: `b-1` → `RoomB1()`, `secret-room` → `RoomSECRETROOM()`
+
+### Requirements
+
+- **jq** (for JSON generator): `brew install jq` (macOS) or `apt-get install jq` (Ubuntu)
+- Executable permissions: Scripts are already marked executable
+
+### After Generation
+
+1. Add `scene.jpg` images to each room's `assets/` folder
+2. Customize dialog text and routes as needed
+3. Test navigation flow between rooms
